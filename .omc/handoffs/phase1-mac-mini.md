@@ -10,7 +10,7 @@ cd Second_brain
 claude  # Claude Code 실행
 ```
 
-Claude Code에서: `.omc/handoffs/phase1-mac-mini.md` 읽고 이 기기에 Syncthing Phase 1 설정해줘.
+Claude Code에서: `CLAUDE.md`와 `README.md`(🎯 진짜 목표 / 결정 로그 먼저 확인), `.omc/handoffs/phase1-mac-mini.md` 읽고 이 기기에 Syncthing Phase 1 설정해줘.
 
 **중요 (노트북에서 실제로 겪은 문제)**: 이 git 저장소(`Second_brain`)를 iCloud Drive 같은 다른 클라우드 동기화 폴더 안에 clone하지 말 것. 실제 Obsidian Vault를 동기화할 Syncthing 폴더도 iCloud Drive 밖의 별도 경로로 잡을 것 (예: `~/Sync/ObsidianVault`, iCloud Drive 경로 아님). 두 개의 서로 다른 동기화 메커니즘(iCloud + Syncthing)이 같은 폴더를 동시에 감시하면 충돌 위험.
 

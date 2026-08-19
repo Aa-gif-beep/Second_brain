@@ -1,3 +1,5 @@
+> **역사적 기록**(2026-08-19 이전). 최신 결정 사항은 `README.md`의 "결정 로그" 섹션을 참고할 것.
+
 ## Handoff: team-plan → pending approval
 
 - **Decided**: 5단계 순차 실행 — Syncthing → Obsidian 구조 → 음성 파이프라인 → Claude RAG → 스케줄러
