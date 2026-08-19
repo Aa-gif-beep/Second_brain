@@ -31,9 +31,9 @@ Claude Code에서:
 - [x] Deep Interview 완료 (모호함 16.7%)
 - [x] 실행 계획 수립
 - [x] Phase 1 — 연구실 PC: Syncthing v2.1.3 설치·구동·자동시작 등록, `obsidian-vault` 폴더 추가 (2026-08-19)
-- [ ] Phase 1 — 노트북: Syncthing 설치 필요
+- [x] Phase 1 — 노트북: Syncthing v2.1.3 설치·구동·자동시작 등록, `obsidian-vault` 폴더 추가, 연구실 PC를 원격 기기로 등록·폴더 공유 설정 (2026-08-19, `.omc/handoffs/phase1-laptop.md` 참조)
 - [ ] Phase 1 — 맥미니: Syncthing 설치 필요
-- [ ] Phase 1 — 3대 기기 페어링 확인 (Device ID 교환, 폴더 공유 수락)
+- [ ] Phase 1 — 3대 기기 페어링 확인 (연구실 PC 쪽에서 노트북 기기 수락 + 폴더 공유 수락 필요 — 아직 미완료)
 - [ ] Phase 2: Obsidian 구조 설정
 - [ ] Phase 3: 음성 → Obsidian 파이프라인
 - [ ] Phase 4: Claude RAG 연결
