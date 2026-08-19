@@ -141,6 +141,12 @@ not done
 
 **목표:** 녹음 파일이 맥미니에 도착하면 자동으로 전사·구조화하여 Obsidian에 삽입
 
+**⚠️ 보류 중 (2026-08-19) — 실행 전 확인 필요한 것들:**
+1. 맥미니가 아직 없음(Phase 1 미완료) — 온라인 되기 전엔 애초에 실행 불가
+2. OpenAI/Anthropic API 키 아직 미발급 — 비용 발생 항목이라 발급 전 확인 필요 (인터뷰에서 원칙적 동의는 받음)
+3. 아래 스크립트의 `model="claude-opus-4-8"`은 **존재하지 않는 모델 ID** — 실제 구현 시 그 시점의 최신 모델 ID로 교체할 것
+4. 아래 스크립트의 `folder_map`은 Phase 2 확정 전(00-Inbox/20-Research 등 옛 구조 기준)에 작성됨 — 실제 구현 시 확정된 구조(`Research/`, `Research-Plan/`, `Admin/`, `_System/`, `_Archive/`)에 맞게 다시 설계해야 함, 지금 그대로 실행하면 존재하지 않는 폴더에 쓰게 됨
+
 ### 3-1. 처리 스크립트 (`~/scripts/process_recording.py`)
 
 ```python
@@ -282,9 +288,10 @@ find ~/Sync/ObsidianVault -name "*.md" -newer /tmp/last_upload \
 
 ### 방법 B (고급): MCP + Obsidian
 
-Claude Code에 파일시스템 MCP 서버 설정:
+Claude Desktop에 파일시스템 MCP 서버 설정 (경로 수정됨, 원래 `~/.claude/claude_desktop_config.json`으로 잘못 적혀있었음):
 ```json
-// ~/.claude/claude_desktop_config.json (Claude Desktop)
+// macOS: ~/Library/Application Support/Claude/claude_desktop_config.json
+// Windows: %APPDATA%\Claude\claude_desktop_config.json
 {
   "mcpServers": {
     "obsidian-vault": {
