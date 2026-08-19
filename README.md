@@ -16,7 +16,7 @@
 노트북도 연구실 PC와 동일하게 **WSL Ubuntu + Claude Code**로 작업할 예정.
 
 ```bash
-git clone git@github.com:Aa-gif-beep/Second_brain.git
+git clone https://github.com/Aa-gif-beep/Second_brain.git
 cd Second_brain
 claude  # Claude Code 실행
 ```
