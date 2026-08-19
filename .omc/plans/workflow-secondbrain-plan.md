@@ -72,31 +72,45 @@ sudo systemctl start syncthing@$USER
 
 **목표:** 연구·할일·독서·일정이 체계적으로 정리되는 Vault
 
-### 2-1. Vault 폴더 구조
+### 2-1. Vault 폴더 구조 (확정, 2026-08-19 — 아래 제안 대신 이 구조 채택)
+
+원안(00-Inbox/10-Daily/20-Research 번호 체계)은 기각. 기존에 쓰던 한글 구조를 유지하면서 **최상위 폴더명만 영문 전환**하는 쪽으로 확정:
 
 ```
 ObsidianVault/
-├── 00-Inbox/               # 미분류 노트 임시 저장
-├── 10-Daily/               # 날짜별 일일 노트 (자동 생성)
-├── 20-Research/            # 실험 노트, 가설, 결과
-│   ├── Projects/
-│   └── Experiments/
-├── 30-Papers/              # 논문 요약, 메모
-├── 40-Ideas/               # 아이디어, 메모
-├── 50-Tasks/               # 프로젝트별 할 일
-├── 60-Archive/             # 완료 항목
-└── Templates/              # 노트 템플릿
+├── Research/               # 구 연구/ — 진행 중인 연구 프로젝트
+│   ├── ASC(Anode Supported Cell) 제작/   # 하위 폴더명은 한글 유지 (의도적 결정)
+│   ├── COMSOL Trench/
+│   ├── In-situ Raman/
+│   ├── SOEC Station/
+│   ├── SOFC ship/
+│   └── 셀 아카이빙/
+├── Research-Plan/          # 구 연구계획/ — 학위·진로 문서
+├── Admin/                  # 구 행정/ — 행정 서류
+├── _System/
+│   ├── Daily/              # 구 _system/데일리/ — 날짜별 데일리 노트
+│   └── _templates/
+├── _Archive/                # 구 _보관/ — 참고자료 아카이브
+├── Second_brain/           # 이 저장소. Syncthing에서 폴더째 제외됨(.stignore)
+├── 🏠 Home.md               # 대시보드, 시작점
+└── 📅 일정.md
 ```
 
-### 2-2. 필수 플러그인
+**결정 이유**: 하위 폴더까지 전부 영문화하는 건 추가 작업 대비 이득이 없다고 판단 — 최상위 구조만 정리되면 탐색·자동화(Syncthing, 스크립트)엔 충분하고, 하위 폴더는 이미 익숙한 이름이라 그대로 두는 게 실용적.
 
-| 플러그인 | 역할 |
-|----------|------|
-| **Templater** | Daily Note 자동 템플릿 적용 |
-| **Tasks** | 할 일 관리, 마감일, 필터 |
-| **Dataview** | 동적 쿼리 (오늘 할 일 모아보기 등) |
-| **Calendar** | 날짜 기반 탐색 |
-| **Periodic Notes** | Daily/Weekly/Monthly Note 자동화 |
+### 2-2. 필수 플러그인 — 현재 미설치 확인됨 (2026-08-19)
+
+`ObsidianVault/.obsidian/community-plugins.json` 확인 결과 **`table-editor-obsidian` 하나만 설치**되어 있고, 아래 5개는 전부 미설치. Obsidian 플러그인 설치는 GUI 조작이 필요해 Claude가 대신 할 수 없음 — 사용자가 직접 설치해야 함.
+
+| 플러그인 | 역할 | 상태 |
+|----------|------|------|
+| **Templater** | Daily Note 자동 템플릿 적용 | ⬜ 미설치 |
+| **Tasks** | 할 일 관리, 마감일, 필터 | ⬜ 미설치 |
+| **Dataview** | 동적 쿼리 (오늘 할 일 모아보기 등) | ⬜ 미설치 |
+| **Calendar** | 날짜 기반 탐색 | ⬜ 미설치 |
+| **Periodic Notes** | Daily/Weekly/Monthly Note 자동화 | ⬜ 미설치 |
+
+설치 방법: Obsidian 설정 → Community plugins → Browse → 위 5개 검색·설치·활성화.
 
 ### 2-3. Daily Note 템플릿 예시 (`Templates/Daily.md`)
 
